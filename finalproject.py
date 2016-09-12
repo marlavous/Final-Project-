@@ -67,7 +67,7 @@ def final_answer():
 
 
 def main():
-	total_score = 0
+	total_score = 2
 
  	choice = music_choice()
  	total_score = total_score + choice
