@@ -7,31 +7,11 @@ def music_choice():
  	print "4 - Hotline Bling by Drake"
  	print "5 - Stranger Things soundtrack"
  	choice = int(raw_input("What music should be playing while you eat?"))
- 	return choice
-
-def eatstyle_choice():
-	print "1 - Normal...whatever that is"
-	print "2 - Bird-like"
-	print "3 - Like a wild animal"
-	print "4 - Sophiscated"
-	choice = int(raw_input("How would you describe your eating style?"))
- 	return choice
-
-def spice_choice():
-	print "1 - not hot at all"
-	print "2 - ooh thats got a little kick!"
-	print "3 - my mouth is on fire!"
-	print "4 - I'm happy with whatever happens"
-	choice = int(raw_input("How spicy do you want it?"))
- 	return choice
-
-def time_choice():
-	print "1 - I had a sensible, healthy lunch"
-	print "2 - I haven't eaten yet today and I'm hangry about it"
-	print "3 - I'm a little peckish"
-	print "4 - I had a bad day and just ate a pint of chocolate ice cream, but lets have dinner"
-	choice = int(raw_input("When did you last eat?"))
- 	return choice
+ 	if choice >= 6:
+ 		print "that is not a valid choice"
+ 		return choice == music_choice()
+ 	else:
+ 		return choice
 
 def drink_choice():
 	print "1 - Gin martini stirred with a twist"
@@ -40,7 +20,47 @@ def drink_choice():
 	print "4 - Fresh lime margarita"
 	print "5 - A glass of Pinot Noir"
 	choice = int(raw_input("Whats your favorite cocktail to have before dinner?"))
- 	return choice
+ 	if choice >= 6:
+ 		print "that is not a valid choice"
+ 		return choice == drink_choice()
+ 	else:
+ 		return choice
+
+def eatstyle_choice():
+	print "1 - Normal...whatever that is"
+	print "2 - Bird-like"
+	print "3 - Like a wild animal"
+	print "4 - Sophiscated"
+	choice = int(raw_input("How would you describe your eating style?"))
+ 	if choice >= 5:
+ 		print "that is not a valid choice"
+ 		return choice == eatstyle_choice()
+ 	else:
+ 		return choice
+
+def spice_choice():
+	print "1 - not hot at all"
+	print "2 - ooh thats got a little kick!"
+	print "3 - my mouth is on fire!"
+	print "4 - I'm happy with whatever happens"
+	choice = int(raw_input("How spicy do you want it?"))
+ 	if choice >= 5:
+ 		print "that is not a valid choice"
+ 		return choice == spice_choice()
+ 	else:
+ 		return choice
+
+def time_choice():
+	print "1 - I had a sensible, healthy lunch"
+	print "2 - I haven't eaten yet today and I'm hangry about it"
+	print "3 - I'm a little peckish"
+	print "4 - I had a bad day and just ate a pint of chocolate ice cream, but lets have dinner"
+	choice = int(raw_input("When did you last eat?"))
+ 	if choice >= 5:
+ 		print "that is not a valid choice"
+ 		return choice == time_choice()
+ 	else:
+ 		return choice
 
 def utensils_choice():
 	print "1 - A steak knife"
@@ -48,7 +68,11 @@ def utensils_choice():
 	print "3 - Chopsticks"
 	print "4 - Umm, a fork duh"
 	choice = int(raw_input("What kind of utensils do you want to use?"))
- 	return choice
+ 	if choice >= 5:
+ 		print "that is not a valid choice"
+ 		return choice == utensils_choice()
+ 	else:
+ 		return choice
 
 def style():
 	print "1 - Healthy" 
@@ -57,13 +81,16 @@ def style():
 	print "4 - Balanced and with many condiments"
 	print "5 - Deep-fried"
 	choice = int(raw_input("All foods should really be what?"))
- 	return choice
+ 	if choice >= 6:
+ 		print "that is not a valid choice"
+ 		return choice == style_choice()
+ 	else:
+ 		return choice
 
 def final_answer():
 	print "1 - Cook"
 	print "2 - Delivery"
 	choice = int(raw_input("Are you going to cook or get something delivered?"))
- 	return choice
 
 
 def main():
@@ -75,7 +102,7 @@ def main():
  	choice = time_choice()
  	total_score = total_score + choice
 
- 	choice = eatstyle_choice()
+ 	choice = utensils_choice()
  	total_score = total_score + choice
 
  	choice = drink_choice()
@@ -83,12 +110,13 @@ def main():
 
  	choice = spice_choice()
  	total_score = total_score + choice
-
- 	choice = utensils_choice()
+ 	
+ 	choice = eatstyle_choice()
  	total_score = total_score + choice
 
  	choice = style()
  	total_score = total_score + choice
+ 	
 
  	choice = final_answer()
  	if choice == 1 and total_score <=10:
@@ -115,6 +143,9 @@ def main():
  	elif choice == 1 and total_score >=40 and total_score <=45:
  		print "You should get your Italian on. Make this: https://smittenkitchen.com/2016/01/spaghetti-pie-with-pecorino-and-black-pepper/"
 
+ 	else: 
+ 		choice >=3
+ 		print "That is not a valid choice"
 
 
  	if choice == 2 and total_score <=10:
@@ -140,6 +171,11 @@ def main():
 
  	elif choice == 2 and total_score >=40 and total_score <=45:
  		print "You should get your Italian on with 54 Mint: https://www.trycaviar.com/san-francisco/54-mint-ristorante-2065"
+
+ 	else: 
+ 		choice >=3
+ 		print "That is not a valid choice"
+
 
 if __name__ == '__main__':
  	main()
