@@ -1,12 +1,14 @@
-#''' this fun game will help you decide what to have for dinner or any other meal.'''
+'''this fun game will help you decide what to have for dinner or any other meal.'''
 
 def music_choice():
+	print " "
  	print "1 - Rolling in the Deep by Adele"
  	print "2 - Born in the USA by Bruce Springstein"
  	print "3 - The Schulyer Sisters by Hamilton Broadway Cast"
  	print "4 - Hotline Bling by Drake"
  	print "5 - Stranger Things soundtrack"
  	choice = int(raw_input("What music should be playing while you eat?"))
+ 	print " "
  	if choice >= 6:
  		print "that is not a valid choice"
  		return choice == music_choice()
@@ -14,12 +16,14 @@ def music_choice():
  		return choice
 
 def drink_choice():
+	print " "
 	print "1 - Gin martini stirred with a twist"
 	print "2 - Mojito"
 	print "3 - A beer with a shot of bourbon on the side"
 	print "4 - Fresh lime margarita"
 	print "5 - A glass of Pinot Noir"
 	choice = int(raw_input("Whats your favorite cocktail to have before dinner?"))
+	print " "
  	if choice >= 6:
  		print "that is not a valid choice"
  		return choice == drink_choice()
@@ -27,11 +31,13 @@ def drink_choice():
  		return choice
 
 def eatstyle_choice():
+	print " "
 	print "1 - Normal...whatever that is"
 	print "2 - Bird-like"
 	print "3 - Like a wild animal"
 	print "4 - Sophiscated"
 	choice = int(raw_input("How would you describe your eating style?"))
+	print " "
  	if choice >= 5:
  		print "that is not a valid choice"
  		return choice == eatstyle_choice()
@@ -39,11 +45,13 @@ def eatstyle_choice():
  		return choice
 
 def spice_choice():
-	print "1 - not hot at all"
-	print "2 - ooh thats got a little kick!"
-	print "3 - my mouth is on fire!"
+	print " "
+	print "1 - Not hot at all"
+	print "2 - Ooh, thats got a little kick!"
+	print "3 - My mouth is on fire!"
 	print "4 - I'm happy with whatever happens"
 	choice = int(raw_input("How spicy do you want it?"))
+	print " "
  	if choice >= 5:
  		print "that is not a valid choice"
  		return choice == spice_choice()
@@ -51,11 +59,13 @@ def spice_choice():
  		return choice
 
 def time_choice():
+	print " "
 	print "1 - I had a sensible, healthy lunch"
 	print "2 - I haven't eaten yet today and I'm hangry about it"
 	print "3 - I'm a little peckish"
 	print "4 - I had a bad day and just ate a pint of chocolate ice cream, but lets have dinner"
 	choice = int(raw_input("When did you last eat?"))
+	print " "
  	if choice >= 5:
  		print "that is not a valid choice"
  		return choice == time_choice()
@@ -63,11 +73,13 @@ def time_choice():
  		return choice
 
 def utensils_choice():
+	print " "
 	print "1 - A steak knife"
 	print "2 - My hands"
 	print "3 - Chopsticks"
 	print "4 - Umm, a fork duh"
 	choice = int(raw_input("What kind of utensils do you want to use?"))
+	print " "
  	if choice >= 5:
  		print "that is not a valid choice"
  		return choice == utensils_choice()
@@ -75,25 +87,36 @@ def utensils_choice():
  		return choice
 
 def style():
+	print " "
 	print "1 - Healthy" 
 	print "2 - Farm to table artistic creations"
 	print "3 - Dessert"
 	print "4 - Balanced and with many condiments"
 	print "5 - Deep-fried"
 	choice = int(raw_input("All foods should really be what?"))
+	print " "
  	if choice >= 6:
  		print "that is not a valid choice"
- 		return choice == style_choice()
+ 		return choice == style()
  	else:
  		return choice
 
 def final_answer():
+	print " "
 	print "1 - Cook"
 	print "2 - Delivery"
 	choice = int(raw_input("Are you going to cook or get something delivered?"))
+	return choice
+	print " "
 
 
 def main():
+	print " "
+	print "This is a fun game that will tell you what to have for dinner."
+	print "Ready?"
+	print "Let's go!"
+	print " "
+	print " "
 	total_score = 0
 
  	choice = music_choice()
@@ -117,10 +140,10 @@ def main():
  	choice = style()
  	total_score = total_score + choice
  	
-
  	choice = final_answer()
+
  	if choice == 1 and total_score <=10:
- 		print "You should have a comforting bowl of soup.  Here's a recipe: https://smittenkitchen.com/2015/09/broccoli-cheddar-soup/"
+ 		print "For dinner you should have a comforting bowl of soup. Here's a recipe: https://smittenkitchen.com/2015/09/broccoli-cheddar-soup/"
  		
 	elif choice == 1 and total_score >=11 and total_score <=14:
  		print "You should have shrimp with roasted squash. Make this: http://www.marthastewart.com/313375/roasted-shrimp-with-spaghetti-squash"
@@ -142,10 +165,6 @@ def main():
 
  	elif choice == 1 and total_score >=40 and total_score <=45:
  		print "You should get your Italian on. Make this: https://smittenkitchen.com/2016/01/spaghetti-pie-with-pecorino-and-black-pepper/"
-
- 	else: 
- 		choice >=3
- 		print "That is not a valid choice"
 
 
  	if choice == 2 and total_score <=10:
@@ -171,11 +190,7 @@ def main():
 
  	elif choice == 2 and total_score >=40 and total_score <=45:
  		print "You should get your Italian on with 54 Mint: https://www.trycaviar.com/san-francisco/54-mint-ristorante-2065"
-
- 	else: 
- 		choice >=3
- 		print "That is not a valid choice"
-
+ 	
 
 if __name__ == '__main__':
  	main()
